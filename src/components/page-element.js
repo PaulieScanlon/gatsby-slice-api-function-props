@@ -1,7 +1,7 @@
 import React from 'react';
-import useDarkMode from '../hooks/use-dark-mode';
+import { Slice } from 'gatsby';
 
-import Header from './header';
+import useDarkMode from '../hooks/use-dark-mode';
 
 const PageElement = ({ children }) => {
   const [darkMode, setDarkMode] = useDarkMode();
@@ -12,7 +12,7 @@ const PageElement = ({ children }) => {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <Header darkMode={darkMode} handleTheme={handleTheme} />
+      <Slice alias="header" darkMode={darkMode} handleTheme={handleTheme} />
       <main className="p-4">{children}</main>
     </div>
   );
